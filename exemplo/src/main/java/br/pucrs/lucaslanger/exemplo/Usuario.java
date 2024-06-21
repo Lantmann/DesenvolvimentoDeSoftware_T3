@@ -1,5 +1,7 @@
 package br.pucrs.lucaslanger.exemplo;
 
+import org.springframework.data.annotation.Id;
+
 @Entity
 public class Usuario {
 
