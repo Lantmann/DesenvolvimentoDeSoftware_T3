@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/servcad") // Define a raiz da URL para os endpoints
-public class FdsController {
+public class Controller {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
