@@ -1,11 +1,6 @@
 package br.pucrs.lucaslanger.exemplo;
 
-import br.pucrs.lucaslanger.exemplo.Aplicativo;
-import br.pucrs.lucaslanger.exemplo.Cliente;
-import br.pucrs.lucaslanger.exemplo.Usuario;
-import br.pucrs.lucaslanger.exemplo.AplicativoRepository;
-import br.pucrs.lucaslanger.exemplo.ClienteRepository;
-import br.pucrs.lucaslanger.exemplo.UsuarioRepository;
+import br.pucrs.lucaslanger.exemplo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +23,7 @@ public class Controller {
     // Endpoint POST /usuvalido
     @PostMapping("/usuvalido")
     public ResponseEntity<Boolean> usuarioValido(@RequestBody Usuario usuario) {
-        // Verifica se o usuÃ¡rio existe no banco de dados
+        // Verifica se o usuário existe no banco de dados
         boolean existe = usuarioRepository.existsById(usuario.getId());
         return ResponseEntity.ok(existe);
     }
