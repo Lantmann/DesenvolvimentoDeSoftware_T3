@@ -1,25 +1,21 @@
--- Inserção de dados na tabela Clientes
-INSERT INTO Clientes (Nome, Email, DataNascimento) VALUES
-('João Silva', 'joao.silva@example.com', '1980-05-15'),
-('Maria Santos', 'maria.santos@example.com', '1992-07-20'),
-('Carlos Pereira', 'carlos.pereira@example.com', '1985-12-30'),
-('Ana Costa', 'ana.costa@example.com', '1990-11-22'),
-('Pedro Oliveira', 'pedro.oliveira@example.com', '1978-09-10'),
-('Lucia Souza', 'lucia.souza@example.com', '1982-01-05'),
-('Marcos Lima', 'marcos.lima@example.com', '1995-04-18'),
-('Fernanda Alves', 'fernanda.alves@example.com', '1988-07-23'),
-('Rafael Pinto', 'rafael.pinto@example.com', '1983-10-29'),
-('Carla Moura', 'carla.moura@example.com', '1991-03-12');
+INSERT INTO Usuario (usuario, senha) VALUES ('Fulano', 'senha123');
+INSERT INTO Usuario (usuario, senha) VALUES ('Ciclano', 'senha456');
 
--- Inserção de dados na tabela Pedidos
-INSERT INTO Pedidos (ClienteID, DataPedido, ValorTotal) VALUES
-(1, '2023-01-15', 150.75),
-(2, '2023-02-10', 299.99),
-(3, '2023-03-05', 89.50),
-(4, '2023-04-22', 250.00),
-(5, '2023-05-18', 175.20),
-(6, '2023-06-10', 320.00),
-(7, '2023-07-01', 220.75),
-(8, '2023-08-15', 150.00),
-(9, '2023-09-20', 99.99),
-(10, '2023-10-05', 450.50);
+INSERT INTO Aplicativos (codigo, nome, custoMensal) VALUES (1123, 'Spotify', 29.99);
+INSERT INTO Aplicativos (codigo, nome, custoMensal) VALUES (2123, 'Apple Music', 19.99);
+INSERT INTO Aplicativos (codigo, nome, custoMensal) VALUES (3123, 'Deezer', 49.99);
+
+INSERT INTO Cliente (codigo, nome, email) VALUES (4123, 'Fulano', 'fulano@email.com');
+INSERT INTO Cliente (codigo, nome, email) VALUES (5123, 'Ciclano', 'ciclano@email.com');
+INSERT INTO Cliente (codigo, nome, email) VALUES (6123, 'Beltrano', 'beltrano@email.com');
+
+INSERT INTO Assinatura (codigo, codigoAplicativo, codigoCliente, inicioVigencia, fimVigencia) VALUES (7123, 1123, 4123, '2024-01-01', '2024-12-31');
+INSERT INTO Assinatura (codigo, codigoAplicativo, codigoCliente, inicioVigencia, fimVigencia) VALUES (8123, 2123, 5123, '2024-02-01', '2024-11-30');
+INSERT INTO Assinatura (codigo, codigoAplicativo, codigoCliente, inicioVigencia, fimVigencia) VALUES (9123, 3123, 6123, '2024-03-01', '2024-10-31');
+
+INSERT INTO Promocao (codigo, nome, tipo, valor, ativa) VALUES (10123, 'Promo20', 'Desconto', 20.00, TRUE);
+INSERT INTO Promocao (codigo, nome, tipo, valor, ativa) VALUES (11123, 'Promo7', 'Extensão', 7.00, TRUE);
+
+INSERT INTO Pagamento (codigo, codigoAssinatura, valorPago, dataPagamento, promocao) VALUES (12123, 7123, 19.99, '2024-01-15', 10123);
+INSERT INTO Pagamento (codigo, codigoAssinatura, valorPago, dataPagamento, promocao) VALUES (13123, 8123, 14.99, '2024-02-15', 11123);
+INSERT INTO Pagamento (codigo, codigoAssinatura, valorPago, dataPagamento, promocao) VALUES (14123, 9123, 44.99, '2024-03-15', NULL);
