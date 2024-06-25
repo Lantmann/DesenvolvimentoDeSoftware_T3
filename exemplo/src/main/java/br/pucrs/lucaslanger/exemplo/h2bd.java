@@ -12,19 +12,19 @@ import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 
 public class h2bd {
-    private static final String JDBC_URL = "jdbc:h2:.\\src\\main\\resources\\bd";
+    private static final String JDBC_URL = "jdbc:h2:.\\exemplo\\src\\main\\resources\\bd";
     private static final String JDBC_USER = "user";            
     private static final String JDBC_PASSWORD = "1234";          
 
-    public static void main(String[] args) {
+    public static void iniciaBD() {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
             System.out.println("Conexão estabelecida com sucesso!");
 
             try (Statement statement = connection.createStatement()) {
-                statement.execute(Files.readString(Path.of(".\\src\\main\\resources\\tabelas.sql"), StandardCharsets.UTF_8));
+                statement.execute(Files.readString(Path.of(".\\exemplo\\src\\main\\resources\\tabelas.sql"), StandardCharsets.UTF_8));
                 System.out.println("Tabelas criadas");
 
-                statement.execute(Files.readString(Path.of(".\\src\\main\\resources\\inserts.sql"), StandardCharsets.UTF_8));
+                statement.execute(Files.readString(Path.of(".\\exemplo\\src\\main\\resources\\inserts.sql"), StandardCharsets.UTF_8));
                 System.out.println("Dados criados");
             }
             catch (IOException io){

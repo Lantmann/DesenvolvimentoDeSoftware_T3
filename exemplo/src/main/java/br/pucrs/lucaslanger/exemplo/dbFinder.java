@@ -12,28 +12,38 @@ public class dbFinder {
     private static final String USER = "admin";
     private static final String PASSWORD = "admin";
 
-    public static ResultSet select(String columns, String tabela) throws SQLException {
-        String sql = "SELECT " + columns + " FROM " + tabela;
+    public static ResultSet select(String tabela, String colunas) throws SQLException {
+        String sql = "SELECT " + colunas + " FROM " + tabela;
         return Table(sql);
     }
 
-    public static ResultSet selectCodigo(String columns, String tabela, String codigo) throws SQLException {
-        String sql = "SELECT " + columns + " FROM " + tabela + " WHERE " + tabela + " = ?";
+    public static ResultSet selectCodigo(String tabela, String colunas, String codigo) throws SQLException {
+        String sql = "SELECT " + colunas + " FROM " + tabela + " WHERE " + tabela + " = ?";
         return Finder(sql, codigo);
     }
 
 
-    private static ResultSet Table(String sql) throws SQLException {
-        Connection connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        return preparedStatement.executeQuery();
+    private static ResultSet Table(String sql) {
+        try(Connection connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            return preparedStatement.executeQuery();
+        }
+        catch (SQLException bd){
+            System.out.println(bd);
+            return null;
+        }
     }
 
     private static ResultSet Finder(String sql, Object codigo) throws SQLException {
-        Connection connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setObject(1, codigo);
-        return preparedStatement.executeQuery();
+        try(Connection connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD)){
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setObject(1, codigo);
+            return preparedStatement.executeQuery();
+        }
+        catch (SQLException bd){
+            System.out.println(bd);
+            return null;
+        }
     }
 }
 
