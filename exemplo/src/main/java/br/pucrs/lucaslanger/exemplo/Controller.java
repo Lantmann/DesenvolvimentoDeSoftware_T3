@@ -11,15 +11,6 @@ import java.util.List;
 @RequestMapping("/servcad") // Define a raiz da URL para os endpoints
 public class Controller {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    @Autowired
-    private ClienteRepository clienteRepository;
-
-    @Autowired
-    private AplicativoRepository aplicativoRepository;
-
     // Endpoint POST /usuvalido
     @PostMapping("/usuvalido")
     public ResponseEntity<Boolean> usuarioValido(@RequestBody Usuario usuario) {
