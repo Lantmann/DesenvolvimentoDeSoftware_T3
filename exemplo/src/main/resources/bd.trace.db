@@ -1,0 +1,62 @@
+2024-06-25 20:21:09.554722-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-06-25 20:21:51.975094-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:21:52.676171-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-06-25 20:31:23.265270-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:31:24.006617-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-06-25 20:34:07.807570-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:34:08.513334-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-224]
+2024-06-25 20:38:40.145252-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:39:01.883238-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:40:31.517620-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:40:50.420154-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:42:20.180999-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-25 20:42:51.746292-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]

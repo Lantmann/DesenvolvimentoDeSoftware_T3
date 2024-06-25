@@ -3,18 +3,19 @@ package br.pucrs.lucaslanger.exemplo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.sql.ResultSet;
 
 public class h2bd {
     private static final String JDBC_URL = "jdbc:h2:.\\exemplo\\src\\main\\resources\\bd";
-    private static final String JDBC_USER = "user";            
-    private static final String JDBC_PASSWORD = "1234";          
+    private static final String JDBC_USER = "admin";            
+    private static final String JDBC_PASSWORD = "admin";          
 
     public static void iniciaBD() {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
@@ -54,7 +55,7 @@ public class h2bd {
     private static void printTabelas(Connection connection, String tabela) throws SQLException {
         String query = "SELECT * FROM " + tabela;
         try (Statement statement = connection.createStatement();
-             ResultSet rs = statement.executeQuery(query)) {
+            ResultSet rs = statement.executeQuery(query)) {
             int colunas = rs.getMetaData().getColumnCount();
             System.out.println("Tabela:  " + tabela);
             while (rs.next()) {
@@ -64,6 +65,35 @@ public class h2bd {
                 System.out.println();
             }
             System.out.println("----------------------------");
+        }
+    }
+
+    public static String convertRs(ResultSet resultSet){
+        try {
+            StringBuilder resultString = new StringBuilder();
+
+            // Get metadata to retrieve column count
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            // Loop through the result set
+            while (resultSet.next()) {
+                // Loop through each column in the current row
+                for (int i = 1; i <= columnCount; i++) {
+                    // Append column value to the string
+                    resultString.append(resultSet.getString(i));
+                    if (i < columnCount) {
+                        resultString.append("\t"); // Append tab if not the last column
+                    }
+                }
+                resultString.append("\n"); // Append new line after each row
+            }
+
+            // Convert StringBuilder to String
+            return resultString.toString();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }
