@@ -10,7 +10,7 @@ public class AplicativoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AplicativoApplication.class, args);
-		h2bd.iniciaBD();
+		//h2bd.iniciaBD();
 	}
 
 }
