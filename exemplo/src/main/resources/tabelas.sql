@@ -3,7 +3,7 @@ CREATE TABLE Usuario (
     senha VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Aplicativos (
+CREATE TABLE Aplicativo (
     codigo BIGINT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     custoMensal FLOAT
@@ -29,7 +29,7 @@ CREATE TABLE Assinatura (
     codigoCliente BIGINT NOT NULL,
     inicioVigencia DATE,
     fimVigencia DATE,
-    FOREIGN KEY (codigoAplicativo) REFERENCES Aplicativos(codigo),
+    FOREIGN KEY (codigoAplicativo) REFERENCES Aplicativo(codigo),
     FOREIGN KEY (codigoCliente) REFERENCES Cliente(codigo)
 );
 

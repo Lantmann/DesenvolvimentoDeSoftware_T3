@@ -1,12 +1,8 @@
 package br.pucrs.lucaslanger.exemplo;
 
 import org.springframework.data.annotation.Id;
-
-@Entity
 public class Cliente {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Gera o ID automaticamente
     private Long id;
     private String nome;
     private String email;

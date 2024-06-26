@@ -42,7 +42,7 @@ public class h2bd {
 
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
             printTabelas(connection, "Usuario");
-            printTabelas(connection, "Aplicativos");
+            printTabelas(connection, "Aplicativo");
             printTabelas(connection, "Cliente");
             printTabelas(connection, "Assinatura");
             printTabelas(connection, "Pagamento");
@@ -72,24 +72,18 @@ public class h2bd {
         try {
             StringBuilder resultString = new StringBuilder();
 
-            // Get metadata to retrieve column count
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
 
-            // Loop through the result set
             while (resultSet.next()) {
-                // Loop through each column in the current row
                 for (int i = 1; i <= columnCount; i++) {
-                    // Append column value to the string
                     resultString.append(resultSet.getString(i));
                     if (i < columnCount) {
-                        resultString.append("\t"); // Append tab if not the last column
+                        resultString.append("\t");
                     }
                 }
-                resultString.append("\n"); // Append new line after each row
+                resultString.append("\n");
             }
-
-            // Convert StringBuilder to String
             return resultString.toString();
         } catch (SQLException e) {
             e.printStackTrace();
