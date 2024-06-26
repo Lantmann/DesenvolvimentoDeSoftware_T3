@@ -7,10 +7,9 @@ import com.aplicativo.aplicativo.dbFinder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/servcad") // Define a raiz da URL para os endpoints
+@RequestMapping("/servcad")
 public class Controller {
 
-    // Endpoint POST /usuvalido
     @PostMapping("/usuvalido")
     public ResponseEntity<Boolean> usuarioValido(@RequestBody Usuario usuario) {
         Boolean existe = false;
@@ -18,13 +17,16 @@ public class Controller {
         return ResponseEntity.ok(existe);
     }
 
-    // Endpoint GET /clientes
     @GetMapping("/clientes")
     public List<String> obterClientes() {
         return dbFinder.selectList("Clientes", "codigo");
     }
 
-    // Endpoint GET /aplicativos
+    @GetMapping("/teste")
+    public String getString() {
+        return "wasd";
+    }
+
     @GetMapping("/aplicativos")
     public List<String> obterAplicativos() {
         return dbFinder.selectList("Aplicativo", "nome");
