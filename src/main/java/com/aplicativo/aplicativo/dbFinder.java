@@ -1,4 +1,4 @@
-package br.pucrs.lucaslanger.exemplo;
+package com.aplicativo.aplicativo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class dbFinder {
 
-    private static final String JDBC_URL = "jdbc:h2:.\\exemplo\\src\\main\\resources\\bd";
+    private static final String JDBC_URL = "jdbc:h2:.\\src\\main\\resources\\bd";
     private static final String USER = "admin";
     private static final String PASSWORD = "admin";
 

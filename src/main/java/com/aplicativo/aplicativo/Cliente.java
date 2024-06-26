@@ -1,4 +1,4 @@
-package br.pucrs.lucaslanger.exemplo;
+package com.aplicativo.aplicativo;
 
 import org.springframework.data.annotation.Id;
 public class Cliente {

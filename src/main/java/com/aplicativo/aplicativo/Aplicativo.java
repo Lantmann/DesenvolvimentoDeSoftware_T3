@@ -1,4 +1,4 @@
-package br.pucrs.lucaslanger.exemplo;
+package com.aplicativo.aplicativo;
 public class Aplicativo {
 
     private Long id;

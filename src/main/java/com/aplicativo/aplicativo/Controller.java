@@ -1,10 +1,9 @@
-package br.pucrs.lucaslanger.exemplo;
+package com.aplicativo.aplicativo;
 
-import br.pucrs.lucaslanger.exemplo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import br.pucrs.lucaslanger.exemplo.dbFinder;
+import com.aplicativo.aplicativo.dbFinder;
 import java.util.List;
 
 @RestController

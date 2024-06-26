@@ -1,4 +1,4 @@
-package br.pucrs.lucaslanger.exemplo;
+package com.aplicativo.aplicativo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class h2bd {
-    private static final String JDBC_URL = "jdbc:h2:.\\exemplo\\src\\main\\resources\\bd";
+    private static final String JDBC_URL = "jdbc:h2:.\\src\\main\\resources\\bd";
     private static final String JDBC_USER = "admin";            
     private static final String JDBC_PASSWORD = "admin";          
 
@@ -22,10 +22,10 @@ public class h2bd {
             System.out.println("Conexão estabelecida com sucesso!");
 
             try (Statement statement = connection.createStatement()) {
-                statement.execute(Files.readString(Path.of(".\\exemplo\\src\\main\\resources\\tabelas.sql"), StandardCharsets.UTF_8));
+                statement.execute(Files.readString(Path.of(".\\src\\main\\resources\\tabelas.sql"), StandardCharsets.UTF_8));
                 System.out.println("Tabelas criadas");
 
-                statement.execute(Files.readString(Path.of(".\\exemplo\\src\\main\\resources\\inserts.sql"), StandardCharsets.UTF_8));
+                statement.execute(Files.readString(Path.of(".\\src\\main\\resources\\inserts.sql"), StandardCharsets.UTF_8));
                 System.out.println("Dados criados");
             }
             catch (IOException io){
