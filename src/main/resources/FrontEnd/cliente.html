@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" th:href="@{/styles.css}">
+<head>
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>john.doe@example.com</td>
+        </tr>
+        <tr>
+            <td>Jane Doe</td>
+            <td>jane.doe@example.com</td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+    </table>
+    <a th:href="@{/}">Voltar</a>
+</body>
+</html>

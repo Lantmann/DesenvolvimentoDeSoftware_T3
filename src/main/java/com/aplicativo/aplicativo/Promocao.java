@@ -6,15 +6,15 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "aplicativos")
-public class Aplicativo {
+@Table(name = "promocoes")
+public class Promocao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 200)
-    private String nome;
+    @Column(nullable = false, length = 255)
+    private String descricao;
 
     @Column(nullable = false)
-    private Double custoMensal;
+    private Double desconto;  // Assuming percentage
 }

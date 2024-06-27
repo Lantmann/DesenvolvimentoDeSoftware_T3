@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Assinaturas</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+    <h1>Assinaturas</h1>
+    <table>
+        <tr>
+            <th>Cliente</th>
+            <th>Aplicativo</th>
+            <th>Início</th>
+            <th>Fim</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>App Pro</td>
+            <td>2023-01-01</td>
+            <td>2024-01-01</td>
+        </tr>
+        <!-- Adicione mais linhas conforme necessário -->
+    </table>
+    <a th:href="@{/}">Voltar</a>
+</body>
+</html>
