@@ -1,0 +1,46 @@
+2024-06-27 00:28:21.469510-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" already exists; SQL statement:
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+) [42101-224]
+2024-06-27 00:31:10.509350-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "APLICATIVO" because "CONSTRAINT_65" depends on it; SQL statement:
+DROP TABLE IF EXISTS Aplicativo [90107-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:108)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:133)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.command.CommandList.update(CommandList.java:65)
+	at org.h2.command.CommandList.executeRemaining(CommandList.java:58)
+	at org.h2.command.CommandList.update(CommandList.java:66)
+	at org.h2.command.CommandList.executeRemaining(CommandList.java:58)
+	at org.h2.command.CommandList.update(CommandList.java:66)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.aplicativo.aplicativo.h2bd.iniciaBD(h2bd.java:26)
+	at com.aplicativo.aplicativo.AplicativoApplication.main(AplicativoApplication.java:14)
+2024-06-27 00:34:08.730333-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "APLICATIVO" because "CONSTRAINT_65" depends on it; SQL statement:
+DROP TABLE Aplicativo IF EXISTS [90107-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:108)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:133)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.command.CommandList.update(CommandList.java:65)
+	at org.h2.command.CommandList.executeRemaining(CommandList.java:58)
+	at org.h2.command.CommandList.update(CommandList.java:66)
+	at org.h2.command.CommandList.executeRemaining(CommandList.java:58)
+	at org.h2.command.CommandList.update(CommandList.java:66)
+	at org.h2.command.Command.executeUpdate(Command.java:256)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at com.aplicativo.aplicativo.h2bd.iniciaBD(h2bd.java:26)
+	at com.aplicativo.aplicativo.AplicativoApplication.main(AplicativoApplication.java:14)

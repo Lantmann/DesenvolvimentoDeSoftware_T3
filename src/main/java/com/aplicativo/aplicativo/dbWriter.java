@@ -11,15 +11,27 @@ public class dbWriter {
     private static final String USER = "admin";
     private static final String PASSWORD = "admin";
 
-    private static void executaQuery(String sql) throws SQLException {
+    private static void executaQuery(String sql, Object... params) {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            
+            for (int i = 0; i < params.length; i++) {
+                preparedStatement.setObject(i + 1, params[i]);
+            }
+            
             preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
         }
     }
 
-    public static void criaCliente(String codigo, String nome, String email){
-        String sql = "INSERT INTO Cliente (codigo, nome, email) VALUES (" + codigo + ", " + nome + ", " + email + ")";
-        executaQuery(sql);
+    public static void criaCliente(Integer codigo, String nome, String email) {
+        String sql = "INSERT INTO Cliente (codigo, nome, email) VALUES (?, ?, ?)";
+        executaQuery(sql, codigo, nome, email);
+    }
+
+    public static void criaAplicativo(Integer codigo, String nome, Double custoMensal) {
+        String sql = "INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (?, ?, ?)";
+        executaQuery(sql, codigo, nome, custoMensal);
     }
 }

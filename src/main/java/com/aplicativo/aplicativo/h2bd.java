@@ -1,5 +1,6 @@
 package com.aplicativo.aplicativo;
 
+import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -90,5 +91,23 @@ public class h2bd {
             return null;
         }
     }
+
+    // dbWriter
+
+    private static void executaQuery(String sql) {
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.executeUpdate();
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+
+    public static void criaCliente(String codigo, String nome, String email){
+        String sql = "INSERT INTO Cliente (codigo, nome, email) VALUES (" + codigo + ", " + nome + ", " + email + ")";
+        executaQuery(sql);
+    }
+    
 }
 
