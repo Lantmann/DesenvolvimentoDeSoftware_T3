@@ -1,7 +1,7 @@
-package com.suaempresa.subscriptions.service;
+package com.aplicativo.inscricoes.service;
 
-import com.suaempresa.subscriptions.model.Cliente;
-import com.suaempresa.subscriptions.repository.ClienteRepository;
+import com.aplicativo.inscricoes.entidades.Cliente;
+import com.aplicativo.inscricoes.repository.ClienteRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -81,3 +81,4 @@ class ClienteServiceTest {
         verify(clienteRepository, times(1)).deleteById(1L);
     }
 }
+

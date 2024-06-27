@@ -1,6 +1,6 @@
-package com.aplicativo.aplicativo.Respository;
+package com.aplicativo.inscricoes.repository;
 
-import com.suaempresa.subscriptions.model.Assinatura;
+import com.aplicativo.inscricoes.entidades.Assinatura;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

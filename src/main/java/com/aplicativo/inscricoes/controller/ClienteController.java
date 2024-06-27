@@ -1,9 +1,9 @@
-package com.aplicativo.aplicativo.Controllers;
+package com.aplicativo.inscricoes.controller;
 
-import com.suaempresa.subscriptions.dto.ClienteDTO;
-import com.suaempresa.subscriptions.model.Cliente;
-import com.suaempresa.subscriptions.repository.ClienteRepository;
-import com.suaempresa.subscriptions.util.Helpers;
+import com.aplicativo.inscricoes.dto.ClienteDTO;
+import com.aplicativo.inscricoes.entidades.Cliente;
+import com.aplicativo.inscricoes.repository.ClienteRepository;
+import com.aplicativo.inscricoes.util.Helpers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

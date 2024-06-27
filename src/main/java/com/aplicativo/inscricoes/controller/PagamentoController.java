@@ -1,9 +1,9 @@
-package com.aplicativo.aplicativo.Controllers;
+package com.aplicativo.inscricoes.controller;
 
-import com.suaempresa.subscriptions.dto.PagamentoDTO;
-import com.suaempresa.subscriptions.model.Pagamento;
-import com.suaempresa.subscriptions.repository.PagamentoRepository;
-import com.suaempresa.subscriptions.util.Helpers;
+import com.aplicativo.inscricoes.dto.PagamentoDTO;
+import com.aplicativo.inscricoes.entidades.Pagamento;
+import com.aplicativo.inscricoes.repository.PagamentoRepository;
+import com.aplicativo.inscricoes.util.Helpers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

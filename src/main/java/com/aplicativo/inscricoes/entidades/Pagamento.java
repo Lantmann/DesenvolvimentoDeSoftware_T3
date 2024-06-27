@@ -1,4 +1,4 @@
-package com.aplicativo.aplicativo;
+package com.aplicativo.inscricoes.entidades;
 import lombok.Data;
 
 import javax.persistence.*;

@@ -1,7 +1,7 @@
-package com.suaempresa.subscriptions.controller;
+package com.aplicativo.inscricoes.controller;
 
-import com.suaempresa.subscriptions.model.Assinatura;
-import com.suaempresa.subscriptions.service.AssinaturaService;
+import com.aplicativo.inscricoes.entidades.Assinatura;
+import com.aplicativo.inscricoes.service.AssinaturaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

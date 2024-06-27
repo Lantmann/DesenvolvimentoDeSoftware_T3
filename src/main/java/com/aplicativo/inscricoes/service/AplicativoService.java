@@ -1,7 +1,7 @@
-package com.aplicativo.aplicativo.Service;
+package com.aplicativo.inscricoes.service;
 
-import com.suaempresa.subscriptions.model.Aplicativo;
-import com.suaempresa.subscriptions.repository.AplicativoRepository;
+import com.aplicativo.inscricoes.entidades.Aplicativo;
+import com.aplicativo.inscricoes.repository.AplicativoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.suaempresa.subscriptions.service;
+package com.aplicativo.inscricoes.service;
 
-import com.suaempresa.subscriptions.model.Pagamento;
-import com.suaempresa.subscriptions.repository.PagamentoRepository;
+import com.aplicativo.inscricoes.entidades.Pagamento;
+import com.aplicativo.inscricoes.repository.PagamentoRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

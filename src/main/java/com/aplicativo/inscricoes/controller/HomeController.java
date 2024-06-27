@@ -1,4 +1,4 @@
-package com.aplicativo.aplicativo.Controllers;
+package com.aplicativo.inscricoes.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

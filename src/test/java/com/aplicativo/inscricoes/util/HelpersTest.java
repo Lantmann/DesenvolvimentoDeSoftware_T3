@@ -1,7 +1,7 @@
-package com.suaempresa.subscriptions.util;
+package com.aplicativo.inscricoes.util;
 
-import com.suaempresa.subscriptions.dto.ClienteDTO;
-import com.suaempresa.subscriptions.model.Cliente;
+import com.aplicativo.inscricoes.dto.ClienteDTO;
+import com.aplicativo.inscricoes.entidades.Cliente;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

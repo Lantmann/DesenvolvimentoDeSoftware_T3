@@ -1,7 +1,7 @@
-package com.aplicativo.aplicativo.Helpers;
+package com.aplicativo.inscricoes.util;
 
-import com.suaempresa.subscriptions.dto.*;
-import com.suaempresa.subscriptions.model.*;
+import com.aplicativo.inscricoes.dto.*;
+import com.aplicativo.inscricoes.entidades.*;
 
 import java.util.Date;
 

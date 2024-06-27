@@ -1,6 +1,6 @@
-package com.suaempresa.subscriptions.repository;
+package com.aplicativo.inscricoes.repository;
 
-import com.suaempresa.subscriptions.model.Promocao;
+import com.aplicativo.inscricoes.entidades.Promocao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

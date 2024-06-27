@@ -1,4 +1,4 @@
-package com.aplicativo.aplicativo.dto;
+package com.aplicativo.inscricoes.dto;
 
 public class ClienteDTO {
     private Long id;
