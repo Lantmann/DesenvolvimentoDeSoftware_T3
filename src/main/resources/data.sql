@@ -16,7 +16,7 @@ INSERT INTO clientes (nome, email) VALUES ('Roberto Dias', 'roberto.dias@example
 INSERT INTO clientes (nome, email) VALUES ('Mariana Alves', 'mariana.alves@example.com');
 INSERT INTO clientes (nome, email) VALUES ('Fernanda Costa', 'fernanda.costa@example.com');
 
--- Insere dados na tabela de assinaturas, assumindo que os IDs dos clientes e aplicativos são conhecidos
+-- Insere dados na tabela de assinaturas
 INSERT INTO assinaturas (cliente_id, aplicativo_id, inicio_vigencia, fim_vigencia) VALUES (1, 1, '2023-01-01', '2024-01-01');
 INSERT INTO assinaturas (cliente_id, aplicativo_id, inicio_vigencia, fim_vigencia) VALUES (2, 2, '2023-02-01', '2024-02-01');
 INSERT INTO assinaturas (cliente_id, aplicativo_id, inicio_vigencia, fim_vigencia) VALUES (3, 3, '2023-03-01', '2024-03-01');
