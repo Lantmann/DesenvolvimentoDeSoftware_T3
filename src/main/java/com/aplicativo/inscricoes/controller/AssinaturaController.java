@@ -39,23 +39,4 @@ public class AssinaturaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<AssinaturaDTO> updateAssinatura(@PathVariable Long id, @RequestBody AssinaturaDTO assinaturaDTO) {
-        return assinaturaRepository.findById(id).map(existingAssinatura -> {
-            existingAssinatura.setClienteId(assinaturaDTO.getClienteId());
-            existingAssinatura.setAplicativoId(assinaturaDTO.getAplicativoId());
-            existingAssinatura.setInicioVigencia(assinaturaDTO.getInicioVigencia());
-            existingAssinatura.setFimVigencia(assinaturaDTO.getFimVigencia());
-            assinaturaRepository.save(existingAssinatura);
-            return ResponseEntity.ok(Helpers.convertToAssinaturaDTO(existingAssinatura));
-        }).orElse(ResponseEntity.notFound().build());
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAssinatura(@PathVariable Long id) {
-        return assinaturaRepository.findById(id).map(assinatura -> {
-            assinaturaRepository.delete(assinatura);
-            return ResponseEntity.ok().<Void>build();
-        }).orElse(ResponseEntity.notFound().build());
-    }
 }

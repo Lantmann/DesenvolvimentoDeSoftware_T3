@@ -1,7 +1,7 @@
 package com.aplicativo.inscricoes.entidades;
-import lombok.Data;
 
-import javax.persistence.*;
+import lombok.Data;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Data

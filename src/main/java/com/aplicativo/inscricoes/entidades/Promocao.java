@@ -1,8 +1,7 @@
 package com.aplicativo.inscricoes.entidades;
 
 import lombok.Data;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Data
 @Entity
@@ -17,4 +16,5 @@ public class Promocao {
 
     @Column(nullable = false)
     private Double desconto;  // Assuming percentage
+
 }

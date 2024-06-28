@@ -1,8 +1,7 @@
 package com.aplicativo.inscricoes.entidades;
 
 import lombok.Data;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Data
@@ -28,4 +27,5 @@ public class Assinatura {
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date fimVigencia;
+
 }

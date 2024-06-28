@@ -2,9 +2,11 @@ package com.aplicativo.inscricoes.util;
 
 import com.aplicativo.inscricoes.dto.*;
 import com.aplicativo.inscricoes.entidades.*;
+import lombok.experimental.UtilityClass;
 
 import java.util.Date;
 
+@UtilityClass
 public class Helpers {
 
     // Converte um Cliente para um ClienteDTO
@@ -33,6 +35,8 @@ public class Helpers {
         dto.setCustoMensal(aplicativo.getCustoMensal());
         return dto;
     }
+
+
 
     // Converte um AplicativoDTO para um Aplicativo
     public static Aplicativo convertToAplicativoEntity(AplicativoDTO aplicativoDTO) {
