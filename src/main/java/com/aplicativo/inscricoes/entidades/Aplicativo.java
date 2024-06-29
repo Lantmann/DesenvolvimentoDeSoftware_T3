@@ -17,7 +17,7 @@ public class Aplicativo {
 
     public void setId(long codigo){ this.codigo = codigo;}
     
-    public void setCustoMensal(float custoMensal){ this.custo_Mensal = custo_Mensal;}
+    public void setCustoMensal(float custo_Mensal){ this.custo_Mensal = custo_Mensal;}
 
     public void setNome(String nome){ this.nome = nome;}
 
