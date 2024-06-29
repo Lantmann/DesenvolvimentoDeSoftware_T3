@@ -1,8 +1,6 @@
 package com.aplicativo.inscricoes.entidades;
 
 import java.sql.Date;
-import com.aplicativo.inscricoes.entidades.Aplicativo;
-import com.aplicativo.inscricoes.entidades.Cliente;
 import jakarta.persistence.*;
 
 @Entity
