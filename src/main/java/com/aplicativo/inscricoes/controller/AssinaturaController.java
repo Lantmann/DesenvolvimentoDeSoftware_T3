@@ -1,8 +1,11 @@
 package com.aplicativo.inscricoes.controller;
 
+import com.aplicativo.inscricoes.dto.AssinaturaResponseDTO;
+import com.aplicativo.inscricoes.entidades.Assinatura;
 import com.aplicativo.inscricoes.repository.*;
+import java.util.List;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/assinaturas")
@@ -32,4 +35,16 @@ public class AssinaturaController {
     public Long getCli() {
         return assinaturaRepository.findAll().getFirst().getCliente().getId();
     }
+
+    /*@GetMapping("/assinaturas/{tipo}")
+    public ResponseEntity<List<AssinaturaResponseDTO>> getAssinaturasPorTipo(@PathVariable String tipo) {
+        List<Assinatura> assinaturas = assinaturaRepository.findAll();
+        List<AssinaturaResponseDTO> response = assinaturas.stream()
+                            .filter(a -> "TODAS".equalsIgnoreCase(tipo) 
+                             ("ATIVAS".equalsIgnoreCase(tipo) && a.getFimVigencia().isAfter(LocalDate.now()) 
+                             ("CANCELADAS".equalsIgnoreCase(tipo) && a.getFimVigencia().isBefore(LocalDate.now())))
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(response);
+    }*/
 }
