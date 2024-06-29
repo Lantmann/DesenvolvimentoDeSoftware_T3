@@ -6,6 +6,9 @@ import com.aplicativo.inscricoes.services.AplicativoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -49,6 +52,12 @@ public class AplicativoController {
         aplicativoService.update(id, editado);
         return aplicativoRepository.findById(id).get().getNome();
     }
+
+    @GetMapping("/getAll")
+    public String getMethodName() {
+        return aplicativoService.getAll();
+    }
+    
     
     
 }

@@ -3,6 +3,7 @@ package com.aplicativo.inscricoes.services;
 import com.aplicativo.inscricoes.entidades.Aplicativo;
 import com.aplicativo.inscricoes.repository.AplicativoRepository;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Array;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,5 +38,48 @@ public class AplicativoService {
                     .map(aplicativo -> String.valueOf(aplicativo.getId()))
                     .collect(Collectors.joining("; "));
         return ids;
+    }
+
+    public String allNome(){
+        List<Aplicativo> aplicativos = aplicativoRepository.findAll();
+
+        String nomes = aplicativos.stream()
+                    .map(aplicativo -> String.valueOf(aplicativo.getNome()))
+                    .collect(Collectors.joining("; "));
+        return nomes;
+    }
+
+    public String allCusto(){
+        List<Aplicativo> aplicativos = aplicativoRepository.findAll();
+
+        String custo = aplicativos.stream()
+                    .map(aplicativo -> Float.toString(aplicativo.getCustoMensal()))
+                    .collect(Collectors.joining("; "));
+        return custo;
+    }
+
+    public String getAll() {
+        List<Aplicativo> aplicativos = aplicativoRepository.findAll();
+        return aplicativos.stream()
+                .map(this::entidadeParaString)
+                .collect(Collectors.joining("\n"));
+    }
+
+    private String entidadeParaString(Aplicativo aplicativo) {
+        StringBuilder sb = new StringBuilder();
+        Field[] fields = aplicativo.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true); // Necessário para acessar campos privados
+            try {
+                sb.append(field.get(aplicativo)).append(" ");
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        // Remove o último espaço extra
+        if (sb.length() > 0) {
+            sb.setLength(sb.length() - 1);
+        }
+        return sb.toString();
     }
 }
