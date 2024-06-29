@@ -1,9 +1,9 @@
 INSERT INTO Usuario (usuario, senha) VALUES ('FulanoUser', 'senha123');
 INSERT INTO Usuario (usuario, senha) VALUES ('CiclanoUser', 'senha456');
 
-INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (1123, 'Spotify', 29.99);
-INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (2123, 'Apple Music', 19.99);
-INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (3123, 'Deezer', 49.99);
+INSERT INTO Aplicativo (codigo, nome, custo_Mensal) VALUES (1123, 'Spotify', 29.99);
+INSERT INTO Aplicativo (codigo, nome, custo_Mensal) VALUES (2123, 'Apple Music', 19.99);
+INSERT INTO Aplicativo (codigo, nome, custo_Mensal) VALUES (3123, 'Deezer', 49.99);
 
 INSERT INTO Cliente (codigo, nome, email) VALUES (4123, 'FulanoCli', 'fulano@email.com');
 INSERT INTO Cliente (codigo, nome, email) VALUES (5123, 'CiclanoCli', 'ciclano@email.com');

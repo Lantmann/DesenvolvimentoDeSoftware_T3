@@ -13,7 +13,7 @@ CREATE TABLE Usuario (
 CREATE TABLE Aplicativo (
     codigo BIGINT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    custoMensal FLOAT
+    custo_Mensal FLOAT
 );
 
 CREATE TABLE Cliente (
@@ -32,20 +32,20 @@ CREATE TABLE Promocao (
 
 CREATE TABLE Assinatura (
     codigo BIGINT PRIMARY KEY,
-    codigoAplicativo BIGINT NOT NULL,
-    codigoCliente BIGINT NOT NULL,
-    inicioVigencia DATE,
-    fimVigencia DATE,
-    FOREIGN KEY (codigoAplicativo) REFERENCES Aplicativo(codigo),
-    FOREIGN KEY (codigoCliente) REFERENCES Cliente(codigo)
+    codigo_Aplicativo BIGINT NOT NULL,
+    codigo_Cliente BIGINT NOT NULL,
+    inicio_Vigencia DATE,
+    fim_Vigencia DATE,
+    FOREIGN KEY (codigo_Aplicativo) REFERENCES Aplicativo(codigo),
+    FOREIGN KEY (codigo_Cliente) REFERENCES Cliente(codigo)
 );
 
 CREATE TABLE Pagamento (
     codigo BIGINT PRIMARY KEY,
-    codigoAssinatura BIGINT NOT NULL,
-    valorPago FLOAT,
-    dataPagamento DATE,
+    codigo_Assinatura BIGINT NOT NULL,
+    valor_Pago FLOAT,
+    data_Pagamento DATE,
     promocao BIGINT,
-    FOREIGN KEY (codigoAssinatura) REFERENCES Assinatura(codigo),
+    FOREIGN KEY (codigo_Assinatura) REFERENCES Assinatura(codigo),
     FOREIGN KEY (promocao) REFERENCES Promocao(codigo)
 );
