@@ -7,23 +7,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-@RequestMapping("/api/clientes")
-public class ClienteController {
-    private ClienteRepository clienteRepository;
+@RequestMapping("/api/usuario")
+public class UsuarioController {
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
-    public ClienteController(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
+    public UsuarioController(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
     }
 
     @GetMapping("")
     public String getMensagemInicial() {
-        return "Central Dados Cliente";
+        return "Central Dados Usuario";
     }
 
     @GetMapping("/getNome")
     public String getAll() {
-        return clienteRepository.findAll().getFirst().getNome();
+        return usuarioRepository.findAll().getFirst().getNome();
     }
     
 }

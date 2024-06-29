@@ -1,13 +1,13 @@
-INSERT INTO Usuario (usuario, senha) VALUES ('Fulano', 'senha123');
-INSERT INTO Usuario (usuario, senha) VALUES ('Ciclano', 'senha456');
+INSERT INTO Usuario (usuario, senha) VALUES ('FulanoUser', 'senha123');
+INSERT INTO Usuario (usuario, senha) VALUES ('CiclanoUser', 'senha456');
 
 INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (1123, 'Spotify', 29.99);
 INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (2123, 'Apple Music', 19.99);
 INSERT INTO Aplicativo (codigo, nome, custoMensal) VALUES (3123, 'Deezer', 49.99);
 
-INSERT INTO Cliente (codigo, nome, email) VALUES (4123, 'Fulano', 'fulano@email.com');
-INSERT INTO Cliente (codigo, nome, email) VALUES (5123, 'Ciclano', 'ciclano@email.com');
-INSERT INTO Cliente (codigo, nome, email) VALUES (6123, 'Beltrano', 'beltrano@email.com');
+INSERT INTO Cliente (codigo, nome, email) VALUES (4123, 'FulanoCli', 'fulano@email.com');
+INSERT INTO Cliente (codigo, nome, email) VALUES (5123, 'CiclanoCli', 'ciclano@email.com');
+INSERT INTO Cliente (codigo, nome, email) VALUES (6123, 'BeltranoCli', 'beltrano@email.com');
 
 INSERT INTO Assinatura (codigo, codigoAplicativo, codigoCliente, inicioVigencia, fimVigencia) VALUES (7123, 1123, 4123, '2024-01-01', '2024-12-31');
 INSERT INTO Assinatura (codigo, codigoAplicativo, codigoCliente, inicioVigencia, fimVigencia) VALUES (8123, 2123, 5123, '2024-02-01', '2024-11-30');
