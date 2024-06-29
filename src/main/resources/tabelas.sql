@@ -1,36 +1,46 @@
--- Criação das tabelas
-CREATE TABLE IF NOT EXISTS aplicativos (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+DROP TABLE Cliente IF EXISTS;
+
+CREATE TABLE Usuario (
+    usuario VARCHAR(255) PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Aplicativo (
+    codigo BIGINT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    custoMensal FLOAT
+);
+
+CREATE TABLE Cliente (
+    codigo BIGINT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    custo_mensal DOUBLE NOT NULL
+    email VARCHAR(255)
 );
 
-CREATE TABLE IF NOT EXISTS clientes (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE
+CREATE TABLE Promocao (
+    codigo BIGINT PRIMARY KEY,
+    nome VARCHAR(100),
+    tipo VARCHAR(100),
+    valor FLOAT,
+    ativa BOOLEAN DEFAULT TRUE
 );
 
-CREATE TABLE IF NOT EXISTS assinaturas (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    cliente_id BIGINT NOT NULL,
-    aplicativo_id BIGINT NOT NULL,
-    inicio_vigencia DATE NOT NULL,
-    fim_vigencia DATE NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES clientes(id),
-    FOREIGN KEY (aplicativo_id) REFERENCES aplicativos(id)
+CREATE TABLE Assinatura (
+    codigo BIGINT PRIMARY KEY,
+    codigoAplicativo BIGINT NOT NULL,
+    codigoCliente BIGINT NOT NULL,
+    inicioVigencia DATE,
+    fimVigencia DATE,
+    FOREIGN KEY (codigoAplicativo) REFERENCES Aplicativo(codigo),
+    FOREIGN KEY (codigoCliente) REFERENCES Cliente(codigo)
 );
 
-CREATE TABLE IF NOT EXISTS pagamentos (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    assinatura_id BIGINT NOT NULL,
-    valor_pago DOUBLE NOT NULL,
-    data_pagamento DATE NOT NULL,
-    FOREIGN KEY (assinatura_id) REFERENCES assinaturas(id)
-);
-
-CREATE TABLE IF NOT EXISTS promocoes (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    descricao VARCHAR(255) NOT NULL,
-    desconto DOUBLE NOT NULL
+CREATE TABLE Pagamento (
+    codigo BIGINT PRIMARY KEY,
+    codigoAssinatura BIGINT NOT NULL,
+    valorPago FLOAT,
+    dataPagamento DATE,
+    promocao BIGINT,
+    FOREIGN KEY (codigoAssinatura) REFERENCES Assinatura(codigo),
+    FOREIGN KEY (promocao) REFERENCES Promocao(codigo)
 );
