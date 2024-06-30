@@ -52,4 +52,8 @@ public class AssinaturaService {
             return assinaturaRepository.findAll();
         }
     }
+
+    public List<Assinatura> getAssinaturasPorCliente(Long clienteId) {
+        return assinaturaRepository.findByClienteId(clienteId);
+    }
 }
