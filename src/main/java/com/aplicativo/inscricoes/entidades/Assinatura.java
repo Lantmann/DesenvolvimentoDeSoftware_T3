@@ -1,6 +1,6 @@
 package com.aplicativo.inscricoes.entidades;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,8 +16,8 @@ public class Assinatura {
     @JoinColumn(name = "codigo_Cliente", nullable = false)
     private Cliente codigo_Cliente;
 
-    private Date inicioVigencia;
-    private Date fimVigencia;    
+    private LocalDate inicioVigencia;
+    private LocalDate fimVigencia;    
 
     public long getId() {return this.codigo;}
 
@@ -25,9 +25,9 @@ public class Assinatura {
 
     public Cliente getCliente() {return this.codigo_Cliente;}
 
-    public Date getInicioVigencia() {return this.inicioVigencia;}
+    public LocalDate getInicioVigencia() {return this.inicioVigencia;}
 
-    public Date getFimVigencia() {return this.fimVigencia;}
+    public LocalDate getFimVigencia() {return this.fimVigencia;}
 
     public void setId(long codigo) { this.codigo = codigo;}
 
@@ -35,9 +35,9 @@ public class Assinatura {
 
     public void setCliente(Cliente codigo_Cliente) { this.codigo_Cliente = codigo_Cliente;}
 
-    public void setInicioVigencia(Date inicioVigencia) { this.inicioVigencia = inicioVigencia;}
+    public void setInicioVigencia(LocalDate inicioVigencia) { this.inicioVigencia = inicioVigencia;}
 
-    public void setFimVigencia(Date fimVigencia) { this.fimVigencia = fimVigencia;}
+    public void setFimVigencia(LocalDate fimVigencia) { this.fimVigencia = fimVigencia;}
 
 
 }

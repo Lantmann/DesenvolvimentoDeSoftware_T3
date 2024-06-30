@@ -3,10 +3,7 @@ package com.aplicativo.inscricoes.controller;
 import com.aplicativo.inscricoes.repository.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/pagamento")
@@ -39,7 +36,7 @@ public class PagamentoController {
     }
 
     @GetMapping("/getDataPagamento")
-    public Date getAlldataPagamento() {
+    public LocalDate getAlldataPagamento() {
         return pagamentoRepository.findAll().getFirst().getdataPagamento();
     }
 

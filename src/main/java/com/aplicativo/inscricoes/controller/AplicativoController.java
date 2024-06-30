@@ -4,10 +4,10 @@ import com.aplicativo.inscricoes.entidades.Aplicativo;
 import com.aplicativo.inscricoes.repository.*;
 import com.aplicativo.inscricoes.services.AplicativoService;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -55,9 +55,11 @@ public class AplicativoController {
 
     @GetMapping("/getAll")
     public String getMethodName() {
-        return aplicativoService.getAll();
+        return aplicativoService.getAllCampos();
     }
     
-    
-    
+    @GetMapping("/aplicativos")
+    public List<Aplicativo> getAllAplicativos() {
+        return aplicativoService.getAll();
+    }
 }

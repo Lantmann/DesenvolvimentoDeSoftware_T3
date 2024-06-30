@@ -4,10 +4,8 @@ import com.aplicativo.inscricoes.entidades.Aplicativo;
 import com.aplicativo.inscricoes.repository.AplicativoRepository;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Array;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,7 +56,7 @@ public class AplicativoService {
         return custo;
     }
 
-    public String getAll() {
+    public String getAllCampos() {
         List<Aplicativo> aplicativos = aplicativoRepository.findAll();
         return aplicativos.stream()
                 .map(this::entidadeParaString)
@@ -69,17 +67,20 @@ public class AplicativoService {
         StringBuilder sb = new StringBuilder();
         Field[] fields = aplicativo.getClass().getDeclaredFields();
         for (Field field : fields) {
-            field.setAccessible(true); // Necessário para acessar campos privados
+            field.setAccessible(true);
             try {
                 sb.append(field.get(aplicativo)).append(" ");
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
-        // Remove o último espaço extra
         if (sb.length() > 0) {
             sb.setLength(sb.length() - 1);
         }
         return sb.toString();
+    }
+    
+    public List<Aplicativo> getAll() {
+        return aplicativoRepository.findAll();
     }
 }

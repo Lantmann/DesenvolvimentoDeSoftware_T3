@@ -10,9 +10,9 @@ public class Usuario {
 
     public String getNome() {return this.usuario;}
 
-    public String getEmail() {return this.senha;}
+    public String getSenha() {return this.senha;}
 
     public void setNome(String usuario){ this.usuario = usuario;}
 
-    public void setEmail(String senha){ this.senha = senha;}
+    public void setSenha(String senha){ this.senha = senha;}
 }

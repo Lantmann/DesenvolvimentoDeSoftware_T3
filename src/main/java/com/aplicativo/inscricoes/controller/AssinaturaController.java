@@ -1,50 +1,39 @@
 package com.aplicativo.inscricoes.controller;
 
-import com.aplicativo.inscricoes.dto.AssinaturaResponseDTO;
 import com.aplicativo.inscricoes.entidades.Assinatura;
 import com.aplicativo.inscricoes.repository.*;
+import com.aplicativo.inscricoes.services.AssinaturaService;
+
 import java.util.List;
-import org.springframework.http.ResponseEntity;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/assinaturas")
 public class AssinaturaController {
     private AssinaturaRepository assinaturaRepository;
 
+    @Autowired
+    private AssinaturaService assinaturaService;
+
     public AssinaturaController(AssinaturaRepository assinaturaRepository) {
         this.assinaturaRepository = assinaturaRepository;
     }
 
-    @GetMapping("")
-    public String getMensagemInicial() {
-        return "Central Dados Assinatura";
+    @GetMapping("/assinaturas/{tipo}")
+    public List<Assinatura> getAssinaturasPorTipo(@PathVariable String tipo) {
+        return assinaturaService.getAssinaturasPorTipo(tipo);
     }
-
-    @GetMapping("/getId")
-    public Long getId() {
-        return assinaturaRepository.findAll().getFirst().getId();
-    }
-
-    @GetMapping("/getApp")
-    public Long getApp() {
-        return assinaturaRepository.findAll().getFirst().getAplicativo().getId();
-    }
-
-    @GetMapping("/getCli")
-    public Long getCli() {
-        return assinaturaRepository.findAll().getFirst().getCliente().getId();
-    }
-
-    /*@GetMapping("/assinaturas/{tipo}")
-    public ResponseEntity<List<AssinaturaResponseDTO>> getAssinaturasPorTipo(@PathVariable String tipo) {
-        List<Assinatura> assinaturas = assinaturaRepository.findAll();
-        List<AssinaturaResponseDTO> response = assinaturas.stream()
-                            .filter(a -> "TODAS".equalsIgnoreCase(tipo) 
-                             ("ATIVAS".equalsIgnoreCase(tipo) && a.getFimVigencia().isAfter(LocalDate.now()) 
-                             ("CANCELADAS".equalsIgnoreCase(tipo) && a.getFimVigencia().isBefore(LocalDate.now())))
-                .map(this::convertToDto)
-                .collect(Collectors.toList());
-        return ResponseEntity.ok(response);
+    /*
+    @PostMapping("/assinaturas")
+    public String postMethodName(@RequestBody String entity) {
+        //TODO: process POST request
+        
+        return entity;
     }*/
+    
 }
