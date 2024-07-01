@@ -5,11 +5,8 @@ import com.aplicativo.inscricoes.repository.*;
 import com.aplicativo.inscricoes.services.AplicativoService;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -64,19 +61,5 @@ public class AplicativoController {
     @GetMapping("/aplicativos")
     public List<Aplicativo> getAllAplicativos() {
         return aplicativoService.getAll();
-    }
-
-    @PutMapping("/atualizacusto/{idAplicativo}")
-    public ResponseEntity<Aplicativo> atualizarCustoAplicativo(@PathVariable Long idAplicativo, @RequestBody Map<String, Float> body) {
-        float novoCusto = body.get("custo");
-
-        Aplicativo aplicativo = aplicativoRepository.findById(idAplicativo).get();
-        if (aplicativo != null) {
-            aplicativo.setCustoMensal(novoCusto);
-            aplicativoRepository.save(aplicativo);
-            return ResponseEntity.ok(aplicativo);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
     }
 }

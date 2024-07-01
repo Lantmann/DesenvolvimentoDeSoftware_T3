@@ -12,8 +12,4 @@ import org.springframework.stereotype.Repository;
 public interface AssinaturaRepository extends JpaRepository<Assinatura, Long> {
     List<Assinatura> findByFimVigenciaAfterOrFimVigenciaIsNull(LocalDate date);
     List<Assinatura> findByFimVigenciaBefore(LocalDate date);
-    
-    List<Assinatura> findByClienteId(Long clienteId);
 }
-
-
