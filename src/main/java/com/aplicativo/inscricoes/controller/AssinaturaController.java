@@ -28,6 +28,10 @@ public class AssinaturaController {
     public List<Assinatura> getAssinaturasPorTipo(@PathVariable String tipo) {
         return assinaturaService.getAssinaturasPorTipo(tipo);
     }
+
+    
+    
+
     /*
     @PostMapping("/assinaturas")
     public String postMethodName(@RequestBody String entity) {

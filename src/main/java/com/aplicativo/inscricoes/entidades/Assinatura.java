@@ -8,6 +8,8 @@ public class Assinatura {
     @Id
     private long codigo;
 
+
+
     @OneToOne
     @JoinColumn(name = "codigo_Aplicativo", nullable = false)
     private Aplicativo aplicativo;

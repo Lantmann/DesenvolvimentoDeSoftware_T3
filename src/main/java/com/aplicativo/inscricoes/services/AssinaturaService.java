@@ -1,12 +1,14 @@
 package com.aplicativo.inscricoes.services;
 
 import com.aplicativo.inscricoes.entidades.Assinatura;
+import com.aplicativo.inscricoes.entidades.Cliente;
 import com.aplicativo.inscricoes.repository.AssinaturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AssinaturaService {
@@ -52,4 +54,16 @@ public class AssinaturaService {
             return assinaturaRepository.findAll();
         }
     }
+
+    public List<Cliente> listarAssinantesPorAplicativo(Long codigoAplicativo) {
+        List<Assinatura> assinaturas = assinaturaRepository.findByAplicativoCodigo(codigoAplicativo);
+        return assinaturas.stream()
+                .map(Assinatura::getCliente)
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    
+
+    
 }

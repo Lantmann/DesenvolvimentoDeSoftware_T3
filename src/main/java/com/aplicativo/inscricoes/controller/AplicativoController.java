@@ -1,20 +1,24 @@
 package com.aplicativo.inscricoes.controller;
 
 import com.aplicativo.inscricoes.entidades.Aplicativo;
+import com.aplicativo.inscricoes.entidades.Cliente;
 import com.aplicativo.inscricoes.repository.*;
 import com.aplicativo.inscricoes.services.AplicativoService;
+import com.aplicativo.inscricoes.services.AssinaturaService;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
-
+ 
 @RestController
 @RequestMapping("/api/aplicativo")
 public class AplicativoController {
     private AplicativoRepository aplicativoRepository;
+
+    @Autowired
+    private AssinaturaService assinaturaService;
 
     @Autowired
     private AplicativoService aplicativoService;
@@ -62,4 +66,16 @@ public class AplicativoController {
     public List<Aplicativo> getAllAplicativos() {
         return aplicativoService.getAll();
     }
+
+
+    @GetMapping("/{codigoAplicativo}/assinantes")
+    public List<Cliente> listarAssinantes(@PathVariable Long codigoAplicativo) {
+        return assinaturaService.listarAssinantesPorAplicativo(codigoAplicativo);
+    }
+    
+
+    
+
 }
+
+
